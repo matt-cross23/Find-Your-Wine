@@ -17,7 +17,7 @@ Look at a map showing distance between user and seller
 Rate and comment on posts 
 
 ## Wireframe or Design for the website 
-Find-Your-Wine![winefav]
+![winefav]
 ![winelog]
 ![winefind]
 
