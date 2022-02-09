@@ -1,9 +1,10 @@
-Penn LPS BootCamp: Project 3 Proposal
-
-# Introduction: our objective for this application is to connect wine connoisseurs through an interactive platform that showcases popular wine along with users’ opinions. This app will also empower casual wine drinkers to be more adventurous and try new wines based on their preferences. Our overall goal for this project is to create an e-commerce application with sleek UI components that attracts customers into searching and purchasing for new wine, in addition to socializing with fellow wine-heads in the comment section. . The database management of this app consists of a NOSQL database to safely store login information and data based on items (wine, orders, cart) that will be queried for each route within the controller directory. When on the main page the user can search something specific, i.e. bands; their searches will trigger different responses from the API; and their searches will be auto saved so that when they log-in and begin typing they can auto-fill their searches. 
-
-
+# Penn LPS BootCamp: Project 3 Proposal
 ## Title  Find Your Wine: The World of Wine at Your Fingertips. 
+
+### Introduction: our objective for this application is to connect wine connoisseurs through an interactive platform that showcases popular wine along with users’ opinions. This app will also empower casual wine drinkers to be more adventurous and try new wines based on their preferences. Our overall goal for this project is to create an e-commerce application with sleek UI components that attracts customers into searching and purchasing for new wine, in addition to socializing with fellow wine-heads in the comment section. . The database management of this app consists of a NOSQL database to safely store login information and data based on items (wine, orders, cart) that will be queried for each route within the controller directory. When on the main page the user can search something specific, i.e. bands; their searches will trigger different responses from the API; and their searches will be auto saved so that when they log-in and begin typing they can auto-fill their searches. 
+
+
+
 
 ## Description (1 paragraph) 
 A complete marketplace for wine-users to find new wines, give a rating and comment on wines they’ve tried, and purchase wine.  
@@ -51,6 +52,4 @@ Basic CRUD routes have been completed
 Styling of page comes toge
 
 
-# Find-Your-Wine![winefav](https://user-images.githubusercontent.com/88978036/153245471-c9f021e3-8a7a-42ec-83d3-68b779dcbcc5.PNG)
-![winelog](https://user-images.githubusercontent.com/88978036/153245482-4ddc58e6-5b1a-4bf5-832c-21bf32507668.PNG)
-![winefind](https://user-images.githubusercontent.com/88978036/153245509-83d45d6b-27cc-4a58-89a3-367bc13333a2.PNG)
+
