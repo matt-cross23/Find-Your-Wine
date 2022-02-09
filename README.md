@@ -1,5 +1,5 @@
 # Penn LPS BootCamp: Project 3 Proposal
-##Title  Find Your Wine: The World of Wine at Your Fingertips. 
+## Find Your Wine: The World of Wine at Your Fingertips. 
 
 ### Introduction: our objective for this application is to connect wine connoisseurs through an interactive platform that showcases popular wine along with users’ opinions. This app will also empower casual wine drinkers to be more adventurous and try new wines based on their preferences. Our overall goal for this project is to create an e-commerce application with sleek UI components that attracts customers into searching and purchasing for new wine, in addition to socializing with fellow wine-heads in the comment section. . The database management of this app consists of a NOSQL database to safely store login information and data based on items (wine, orders, cart) that will be queried for each route within the controller directory. When on the main page the user can search something specific, i.e. bands; their searches will trigger different responses from the API; and their searches will be auto saved so that when they log-in and begin typing they can auto-fill their searches. 
 
