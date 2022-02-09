@@ -17,9 +17,7 @@ Look at a map showing distance between user and seller
 Rate and comment on posts 
 
 ## Wireframe or Design for the website 
-[winefav]
-[winelog]
-[winefind]
+[winefav](https://user-images.githubusercontent.com/88978036/153245471-c9f021e3-8a7a-42ec-83d3-68b779dcbcc5.PNG)
 
 ## List of Tasks or Acceptance Criteria 
 Given a e-commerce style platform
