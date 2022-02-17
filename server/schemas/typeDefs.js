@@ -1,12 +1,16 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-  type Thought {
+  type Wine {
     _id: ID
-    thoughtText: String
-    thoughtAuthor: String
+    wineName: String
     createdAt: String
     comments: [Comment]!
+  }
+  type User {
+    name: String!
+    username: String!
+    password: String!
   }
 
   type Comment {
@@ -21,8 +25,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addThought(thoughtText: String!, thoughtAuthor: String!): Thought
-    addComment(thoughtId: ID!, commentText: String!): Thought
+    addWine(wineName: String!, vineyardLocation: String!): Wine
+    addComment(commentId: ID!, commentText: String!): Thought
     removeThought(thoughtId: ID!): Thought
     removeComment(thoughtId: ID!, commentId: ID!): Thought
   }
