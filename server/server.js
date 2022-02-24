@@ -8,7 +8,7 @@ const connectDB = require('./config/db')
 const PORT =process.env.PORT || 5000
 
 // Connect to dtatbase
-connectDB()
+connectDB();
 
 const app = express();
 
@@ -30,6 +30,8 @@ if (process.env.NODE_ENV === 'production') {
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
+
+
 // Serve Frontend
 // if (process.env.NODE_ENV === 'production') {
 //     // Set build folder as static
