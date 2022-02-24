@@ -1,34 +1,41 @@
+const path = require('path')
 const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
-const path = require('path');
+const colors = require('colors')
+const { message } = require('statuses');
+const dotenv = require('dotenv').config()
+const {errorHandler} =require('./midleware/errorMiddleware')
+const connectDB = require('./config/db')
+const PORT =process.env.PORT || 5000
 
-const { typeDefs, resolvers } = require('./schemas');
-const db = require('./config/connection');
+// Connect to dtatbase
+connectDB()
 
-const PORT = process.env.PORT || 3001;
 const app = express();
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-});
+app.use(express.json())
+app.use(express.urlencoded ({ extended: true}))
 
-server.applyMiddleware({ app });
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+app.get('/', (req, res) => {
+    res.status(200).json({message:'Welcome to suport desk API'})
+})
+//  Routes
+app.use('/api/users', require('./routes/userRoutes'))
+app.use(errorHandler)
 
+// Serve Frontend
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
+    // Set build folder as static
+    app.use(express.static(path.join(__dirname, '../frontend/build')))
+  
+    // FIX: below code fixes app crashing on refresh in deployment
+    app.get('*', (_, res) => {
+      res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
+    })
+  } else {
+    app.get('/', (req, res) => {
+      res.status(200).json({ message: 'Welcome to the Support Desk API' })
+    })
+  }
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
-
-db.once('open', () => {
-  app.listen(PORT, () => {
-    console.log(`API server running on port ${PORT}!`);
-    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-  });
-});
+app.listen(PORT, () => console.log(`Server started on ${PORT}`))
