@@ -16,9 +16,9 @@ app.use(express.json())
 app.use(express.urlencoded ({ extended: true}))
 
 
-app.get('/', (req, res) => {
-    res.status(200).json({message:'Welcome to suport desk API'})
-})
+// app.get('/', (req, res) => {
+//     res.status(200).json({message:'Welcome to suport desk API'})
+// })
 //  Routes
 app.use('/api/users', require('./routes/userRoutes'))
 app.use(errorHandler)
