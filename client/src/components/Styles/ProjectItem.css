@@ -1,0 +1,27 @@
+/* Aligning items in main row */
+.main_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Changing Name Font sixe */
+  .main_row h1 {
+    font-size: 5rem;
+  }
+  
+  /* Making the main image the size of the screen */
+  .main_row img {
+    width: auto;
+    height: 100vh;
+  }
+  
+  /* About Section */
+  .about {
+    background: #313552;
+    border-radius: 0.5rem;
+  }
+  
+  .card {
+    border-bottom: 8px solid #f5ba09;
+  }
