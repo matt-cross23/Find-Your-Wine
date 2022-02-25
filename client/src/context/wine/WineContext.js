@@ -25,7 +25,7 @@ export const WineProvider = ({ children }) => {
         setLoading()
 
         const params = new URLSearchParams({
-            s: text
+            wine: text
         })
 
         const response = await 
@@ -37,11 +37,10 @@ export const WineProvider = ({ children }) => {
         //     }
         // })
         
-        fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?${params}`, {
+        fetch(`https://api.spoonacular.com/food/wine/recommendation//${params}`, {
 	"method": "GET",
 	"headers": {
-		"host": "the-cocktail-db.p.rapidapi.com",
-		"key": "1"
+        'authorization': '06566d96b10b4685a8d92599d8e35d9c'
 	}
 })
 .then(response => {
