@@ -6,8 +6,9 @@ import wineReducer from './WineReducer'
 
 const WineContext = createContext()
 
-const GITHUB_URL = process.env.REACT_APP_GITHUB_URL
-const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
+// Get the api key from .env
+// const GITHUB_URL = process.env.REACT_APP_GITHUB_URL
+// const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
 
 
 export const WineProvider = ({ children }) => {
@@ -24,24 +25,38 @@ export const WineProvider = ({ children }) => {
         setLoading()
 
         const params = new URLSearchParams({
-            q: text
+            wine: text
         })
 
         const response = await 
    
-        fetch(`${GITHUB_URL}/search/users?${params}`, {
-            headers: {
-                Authorization: `token ${GITHUB_TOKEN}`
-            }
-        })
+        // Fetches the string 
+        // fetch(`${GITHUB_URL}/search/users?${params}`, {
+        //     headers: {
+        //         Authorization: `token ${GITHUB_TOKEN}`
+        //     }
+        // })
+        
+        fetch(`https://api.spoonacular.com/food/wine/recommendation//${params}`, {
+	"method": "GET",
+	"headers": {
+        'authorization': '06566d96b10b4685a8d92599d8e35d9c'
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
 
 
-        const {items} = await response.json()
+    //     const {items} = await response.json(items)
 
-       dispatch({
-          type: 'GET_USERS',
-          payload: items,
-      })
+    //    dispatch({
+    //       type: 'GET_USERS',
+    //       payload: items,
+    //   })
     }
 
  // Clear  user from state
