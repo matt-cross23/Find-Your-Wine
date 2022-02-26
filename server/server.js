@@ -24,27 +24,17 @@ app.use('/api/users', require('./routes/userRoutes'))
 app.use(errorHandler)
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
-
-
-// Serve Frontend
-// if (process.env.NODE_ENV === 'production') {
-//     // Set build folder as static
-//     app.use(express.static(path.join(__dirname, '../client/build')))
+    // Set build folder as static
+    app.use(express.static(path.join(__dirname, '../client/build')))
   
-//     // FIX: below code fixes app crashing on refresh in deployment
-//     app.get('*', (_, res) => {
-//       res.sendFile(path.join(__dirname, '../client/build/index.html'))
-//     })
-//   } else {
-//     app.get('/', (req, res) => {
-//       res.sendFile(path.join(__dirname, '../client/build/index.html'))
-//     })
-//   }
+    // FIX: below code fixes app crashing on refresh in deployment
+    app.get('*', (_, res) => {
+      res.sendFile(path.join(__dirname, '../client/build/index.html'))
+    })
+  } else {
+    app.get('/', (req, res) => {
+      res.status(200).json({ message: 'Welcome to the Support Desk API' })
+    })
+  }
 
 app.listen(PORT, () => console.log(`Server started on ${PORT}`))
